@@ -20,8 +20,6 @@ jobs:
           pip install -r requirements.txt
 
       - name: Start PHP Development Server
-        env:
-          APP_ENV: 'prod'
         run: php -S localhost:8000 &
 
       - name: Tests
