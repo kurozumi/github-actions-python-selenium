@@ -15,8 +15,7 @@ class SeleniumTest(unittest.TestCase):
         
     def test_1(self):
         self.driver.get("http://localhost:8000")
-        print(self.driver.title)
-        assert "sample" in self.driver.title
+        assert "test" in self.driver.title
 
 if __name__ == "__main__":
     unittest.main()
