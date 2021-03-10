@@ -8,13 +8,13 @@ class SeleniumTest(unittest.TestCase):
         options = Options()
         options.add_argument('--headless')
         self.driver = webdriver.Chrome(chrome_options=options)
-        self.driver.get("http://localhost:8000")
 
     def tearDown(self):
         self.driver.close()
         self.driver.quit()
         
     def test_1(self):
+        self.driver.get("http://localhost:8000")
         assert "sample" in self.driver.title
 
 if __name__ == "__main__":
