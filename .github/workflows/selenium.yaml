@@ -25,4 +25,5 @@ jobs:
         run: php -S localhost:8000 &
 
       - name: Tests
+        cd Tests
         run: python -m unittest discover
