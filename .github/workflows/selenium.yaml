@@ -2,22 +2,22 @@ name: Selenium
 on: [push]
 
 jobs:
-  build:
+  selenium:
     runs-on: ubuntu-latest
     
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v2
       
-      - name: set up python
+      - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.7'
       
-      - name: install dependencies
+      - name: Install dependencies
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: test
-        run: python main.py
+      - name: Tests
+        run: python test.py
