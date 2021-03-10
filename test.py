@@ -8,14 +8,14 @@ class SeleniumTest(unittest.TestCase):
         options = Options()
         options.add_argument('--headless')
         self.driver = webdriver.Chrome(chrome_options=options)
-        self.driver.get("https://v4.eccube-plugin.net/")
+        self.driver.get("http://127.0.0.1:4444/wd/hub")
 
     def tearDown(self):
         self.driver.close()
         self.driver.quit()
         
     def test_1(self):
-        assert "あずみ.net" in self.driver.title
+        assert "sample" in self.driver.title
 
 if __name__ == "__main__":
     unittest.main()

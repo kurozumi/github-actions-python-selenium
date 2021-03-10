@@ -4,6 +4,14 @@ on: [push]
 jobs:
   selenium:
     runs-on: ubuntu-latest
+
+    services:
+      chrome:
+        image: selenium/standalone-chrome
+        ports:
+          - 4444:4444
+        volumes:
+          - /dev/shm:/dev/shm
     
     steps:
       - name: Checkout
