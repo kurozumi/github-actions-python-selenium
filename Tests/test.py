@@ -7,7 +7,7 @@ class SeleniumTest(unittest.TestCase):
     def setUp(self):
         options = Options()
         options.add_argument('--headless')
-        self.driver = webdriver.Chrome(chrome_options=options)
+        self.driver = webdriver.Chrome(options=options)
 
     def tearDown(self):
         self.driver.close()
