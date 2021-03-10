@@ -20,4 +20,4 @@ jobs:
           pip install -r requirements.txt
 
       - name: test
-        run: main.py
+        run: python main.py
