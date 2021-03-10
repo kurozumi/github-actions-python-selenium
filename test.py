@@ -8,7 +8,7 @@ class SeleniumTest(unittest.TestCase):
         options = Options()
         options.add_argument('--headless')
         self.driver = webdriver.Chrome(chrome_options=options)
-        self.driver.get("http://172.31.0.3:4444/wd/hub")
+        self.driver.get("http://127.0.0.1:8000")
 
     def tearDown(self):
         self.driver.close()

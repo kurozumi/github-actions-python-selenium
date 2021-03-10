@@ -5,14 +5,6 @@ jobs:
   selenium:
     runs-on: ubuntu-latest
 
-    services:
-      chrome:
-        image: selenium/standalone-chrome
-        ports:
-          - 4444:4444
-        volumes:
-          - /dev/shm:/dev/shm
-    
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -26,6 +18,11 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
+
+      - name: Start PHP Development Server
+        env:
+          APP_ENV: 'prod'
+        run: php -S localhost:8000 &
 
       - name: Tests
         run: python -m unittest discover
